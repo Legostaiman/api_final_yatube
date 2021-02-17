@@ -1,16 +1,11 @@
-from .models import (Group,
-                     Post,
-                     Comment,
-                     Follow)
-from .serializers import PostSerializer, \
-    CommentSerializer, \
-    FollowSerializer, \
-    GroupSerializer
-from .permissions import IsOwnerOrReadOnly
-
 from django.shortcuts import get_object_or_404
-from rest_framework import viewsets, mixins, permissions, filters
 from django_filters.rest_framework import DjangoFilterBackend
+from rest_framework import filters, mixins, permissions, viewsets
+
+from .models import Comment, Follow, Group, Post
+from .permissions import IsOwnerOrReadOnly
+from .serializers import (
+    CommentSerializer, FollowSerializer, GroupSerializer, PostSerializer)
 
 
 class CustomViewSet(mixins.ListModelMixin,
@@ -37,7 +32,6 @@ class PostViewSet(viewsets.ModelViewSet):
 
 
 class CommentViewSet(viewsets.ModelViewSet):
-    queryset = Comment.objects.filter()
     serializer_class = CommentSerializer
     permission_classes = [IsOwnerOrReadOnly]
 
