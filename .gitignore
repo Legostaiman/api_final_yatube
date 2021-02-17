@@ -2,6 +2,7 @@
 env/
 venv/
 .venv/
+.Заметки.txt/
 
 __pycache__/
 *.py[cod]
