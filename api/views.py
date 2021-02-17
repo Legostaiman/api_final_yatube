@@ -8,7 +8,6 @@ from .serializers import PostSerializer, \
     GroupSerializer
 from .permissions import IsOwnerOrReadOnly
 
-
 from django.shortcuts import get_object_or_404
 from rest_framework import viewsets, mixins, permissions, filters
 from django_filters.rest_framework import DjangoFilterBackend
