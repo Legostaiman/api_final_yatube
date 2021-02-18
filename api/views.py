@@ -46,7 +46,6 @@ class CommentViewSet(viewsets.ModelViewSet):
 
 
 class FollowView(CustomViewSet):
-    queryset = Follow.objects.all()
     serializer_class = FollowSerializer
     permission_classes = [permissions.IsAuthenticated]
     filter_backends = [filters.SearchFilter]
